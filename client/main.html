@@ -1,0 +1,70 @@
+<head>
+  <title>ChatBot</title>
+</head>
+
+<body>
+    <div class="bodyContainer">
+        <div class="user_row">
+            {{> loginButtons}}
+        </div>
+        <div class="Rectangle-22-Copy">
+            <div class="bot_icon">
+                <img class="img-circle" src="https://3c2ba678857e073c9506-9b92ffc51ccdc874f7e956dfcfbdbfba.ssl.cf5.rackcdn.com/spark/Non-Eidiko%20built%20apps%20/apiai/apiai.png" >
+            </div>
+            
+            <div class="botName-Container">
+                    <a class="gotoAndBot-Copy">gotoAndBot</a>
+            </div>
+        </div>
+        
+        <div class="messages-class">
+            {{> messages}}
+        </div>
+        
+    </div>
+
+    
+</body>
+
+
+<template name="messages">
+    <nav>
+        <ul>
+        {{#each messages}}
+        <div class="message">
+            {{> message}}
+        </div>
+        {{/each}}
+    </ul>
+    </nav>
+    
+    <div class="Path-22-Copy">
+    </div>
+    
+    <div class="input-form">
+        <form class="textarea-form">
+            <textarea class="Kirjuta-siia-Copy" placeholder="Kirjuta siia"></textarea>
+        </form>
+    </div>
+    
+    
+</template>
+
+<template  name="message">
+    <li class={{botOrNot}}>
+        <!-- <img src="{{user.profile}}"/> // Takes img from wordpress --> 
+        <div class="message-icon">
+            <img class="img-circle" src="https://3c2ba678857e073c9506-9b92ffc51ccdc874f7e956dfcfbdbfba.ssl.cf5.rackcdn.com/spark/Non-Eidiko%20built%20apps%20/apiai/apiai.png" >
+        </div>
+        <div class="message-content">
+            <div class="message-header">
+            {{user.username}} <span class="time">{{time}}</span>
+            </div>
+            <div class="message-text-container">
+                <a class="message-text">{{message}}</a>
+            </div>
+        </div>
+        
+    </li>
+</template>
+

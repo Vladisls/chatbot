@@ -1,0 +1,154 @@
+/* CSS declarations go here */
+.bodyContainer {
+    display: grid;
+    width: 1024px;
+    height: 794px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 8fr 1fr;
+
+    grid-gap: 10px;
+    grid-template-areas: "username"
+                       "bot"
+                       "chat"
+                       "footer";
+    
+}
+
+.user_row {
+    grid-area: "username";
+}
+
+.bot-icon {
+    grid-area: icon;
+}
+
+.Rectangle-22-Copy {
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+    display: grid;
+    grid-template-columns: 1fr 2fr 12fr;
+    grid-template-areas: "icon name whitespace"
+}
+
+.img-circle {
+    border-radius: 50%;
+    border:3px solid #62e2c0;
+    width: 40.7px;
+    height: 41.7px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.botName-Container {
+    grid-area: name;
+    align-self: center;
+}
+.gotoAndBot-Copy {
+    width: 109px;
+    height: 20px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #62e2c0;
+    grid-row: 2;
+}
+
+.messages-class {
+    grid-area: chat;
+    display: grid;
+    grid-template-rows: 9fx 1fx;
+}
+
+.Path-22-Copy {
+    width: 1024px;
+    height: 0px;
+    border: solid 1px #62e2c0;
+}
+
+.input-form {
+    width: 1022px;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 16fr 1fr;
+}
+
+.textarea-form {
+    grid-auto-columns: 1;
+    
+}
+
+.Kirjuta-siia-Copy {
+    border: none;
+    resize: none;
+    width: 259px;
+    height: 21px;
+    opacity: 0.45;
+    font-family: Roboto;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    color: #475277;
+    padding-left: 21px;
+    padding-top: 20px;
+    grid-auto-columns: 1;
+    
+}
+
+.message-row-bot {
+    width: 1022px;
+    min-height: 10px;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "uicon content";
+    justify-self: start;
+}
+.message-row {
+    width: 1022px;
+    min-height: 10px;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content uicon";
+    justify-self: end;
+    text-align: right;
+}
+
+.message-content {
+    grid-area: content;
+    justify-self: inherit;
+}
+.message-header {
+    font-size: 8px;
+    margin-top: 2px;
+    color: darkgrey;
+
+    
+}
+
+.message-icon {
+    grid-area: uicon;
+    text-align: left;
+}
+
+.message-text-container {
+    min-height: 45px;
+    border-radius: 2px;
+    padding: 10px;
+    padding-bottom: 0px;
+    background-color: #ddfde8;
+}
+
+.message-text {
+    border-radius: 2px;
+    font-family: Roboto;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    line-height: 2em;
+    padding: 10px;
+}
+nav ul{list-style-type: none; height:700px; width:1024px;}
+nav ul{overflow:hidden; overflow-y:scroll;}
+
