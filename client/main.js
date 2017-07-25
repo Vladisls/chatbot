@@ -7,7 +7,7 @@ Messages = new Mongo.Collection('messages');
 
 Template.messages.helpers({
     messages: function () {
-        return Messages.find(); 
+        return Messages.find();
     }
 });
 
@@ -77,3 +77,5 @@ Template.messages.events({
 Accounts.ui.config({
    passwordSignupFields: "USERNAME_AND_OPTIONAL_EMAIL" 
 });
+
+
