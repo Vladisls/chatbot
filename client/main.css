@@ -25,6 +25,7 @@
 
 .img-circle {
     margin-left: 5px;
+    margin-left: 5px;
     align-self: center;
     grid-area: icon;
     border-radius: 50%;
@@ -55,7 +56,7 @@
     grid-area: chat;
     max-height: 500px;
     display: grid;
-    grid-template-rows: 9fr 1fr;
+    grid-template-rows: 12fr 1fr;
 }
 .message-icon {
     width: 5vh;
@@ -105,6 +106,7 @@
 
 .message-header {
     margin-bottom: 5px;
+    margin-right: 10px;
     font-size: 14px;
     margin-top: 2px;
     color: darkgrey;
