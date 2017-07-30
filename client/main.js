@@ -13,7 +13,12 @@ Template.messages.helpers({
 
 Template.message.helpers({
     user: function(){
-        return Meteor.users.findOne({_id: this.user});
+        if (this.username == null){
+            return Meteor.users.findOne({_id: this.user}).username; 
+        }else {
+            return this.username;
+        }
+          
     },
     
     time: function(){
