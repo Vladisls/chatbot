@@ -38,7 +38,6 @@ Template.message.helpers({
                 }
             }
             catch(err) {
-                console.log("this message has no user linked to");
                 return Spacebars.SafeString('message-row-bot');
             }
             
@@ -52,35 +51,35 @@ Template.messages.events({
     'keypress textarea': function(e, instance) {
         
         if (e.keyCode == 13) { //enter key pressed
-            
             e.preventDefault();
-            var value = instance.find('textarea').value;
-            instance.find('textarea').value = '';
-            var name = null;
-            try {
+            var name = Meteor.userId();
+            if(name == null){
+                Messages.insert({
+                    message: "Please log in, before you ask anything",
+                    timestamp: new Date(),
+                    username: "gotoAndBot"
+                });
+            }else{
                 name = Meteor.userId();
+                var value = instance.find('textarea').value;
+                instance.find('textarea').value = '';
+                Messages.insert({
+                    message: value,
+                    timestamp: new Date(),
+                    user: name
+                });
+                Meteor.call('messageSent', value);
             }
-            catch(err) {
-                console.log("User not logged in");
-            }
-            
-            Messages.insert({
-                message: value,
-                timestamp: new Date(),
-                user: name
-             });
-            
-            // Message sent move scrollel to bottom
+            // Message sent move scrollbar to bottom
             var element = instance.find("ul");
             element.scrollTop = element.scrollHeight;
-            Meteor.call('messageSent', value);
         }
 
     }
 });
 
 Accounts.ui.config({
-   passwordSignupFields: "USERNAME_AND_OPTIONAL_EMAIL" 
+   passwordSignupFields: "USERNAME_AND_OPTIONAL_EMAIL"
 });
 
 
